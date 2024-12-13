@@ -1,4 +1,8 @@
 .env
+bioconductor_docker/
+.cache/
+.config/
+.local/
 
 ### R ###
 # History files
