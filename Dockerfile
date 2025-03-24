@@ -4,4 +4,6 @@ RUN apt-get update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN R -e 'BiocManager::install(c("BiocVersion", "BioBase"), dependencies = TRUE)'
+COPY install_packages.R /tmp/
+RUN Rscript /tmp/install_packages.R && \
+	rm /tmp/install_packages.R
